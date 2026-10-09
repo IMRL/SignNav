@@ -1,0 +1,29 @@
+TORCH_GPU_ID: 0 
+NUM_ENVIRONMENTS: 1 
+SIMULATOR_GPU_IDS: [1] 
+
+TRAINER_NAME: dagger_trainer
+
+MODEL:
+  policy_name: PWGWPolicy
+  max_action_steps: 100
+
+IL:
+  lr: 1.0e-5
+  epochs: 50 
+  batch_size: 3 
+  use_iw: False
+
+  DAGGER:
+    p: 0.75 
+    iterations: 1 
+    update_size: 5048 
+    preload_lmdb_features: True
+    lmdb_features_dir: data/trajectories_dirs/cma/trajectories.lmdb 
+
+EVAL:
+  USE_CKPT_CONFIG: False
+  SPLIT: val_seen # train/val_seen/val_unseen
+  EPISODE_COUNT: -1 
+
+EVAL_CKPT_PATH_DIR: data/checkpoints/cma/2026_06_11_21_48_30/ckpt_3_25.pth

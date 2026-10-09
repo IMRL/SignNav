@@ -1,0 +1,9 @@
+# Using this config file when you are going to collect dataset.
+
+# 这个参数决定的是按照场景划分，而不是按照episode_id划分，一个env负责一个scene下的所有episode_id，一张卡跑多少个envs
+# NUM_ENVIRONMENTS: 2 # 一张卡跑12个场景不如多张卡总共跑12个场景的效率高
+# SIMULATOR_GPU_IDS: [0, 1, 2, 3, 4, 5]
+
+# this is for single GPU
+NUM_ENVIRONMENTS: 3 # 一张卡跑12个场景不如多张卡总共跑12个场景的效率高
+SIMULATOR_GPU_IDS: [0]
